@@ -13,12 +13,10 @@
 using namespace std;
 
 int main() {
-
+    
     cout << "Compute Body Mass Index \n";
     // D
-    double height_feet_input = 0.0;
-    double height_inches_input = 0.0;
-    double height_total_inches = 0.0;
+    double height_input = 0.0;
     double weight_input = 0.0;
     const double KILOGRAMS_PER_POUND = 0.45359237;
     const double METERS_PER_INCH = 0.0254;
@@ -30,18 +28,14 @@ int main() {
     cout << "Enter weight in pounds: ";
     cin >> weight_input;
     
-    cout << "Enter height feet: ";
-    cin >> height_feet_input;
-    
-    cout << "Enter height inches: ";
-    cin >> height_inches_input;
+    cout << "Enter height in inches: ";
+    cin >> height_input;
     
     // P
     
     // convert weight and height to metric
-    height_total_inches = height_feet_input * 12 + height_inches_input;
     metric_weight_calc = weight_input * KILOGRAMS_PER_POUND;
-    metric_height_calc = height_total_inches * METERS_PER_INCH;
+    metric_height_calc = height_input * METERS_PER_INCH;
     
     // compute body mass index
     bmi = metric_weight_calc / pow(metric_height_calc, 2.0);
